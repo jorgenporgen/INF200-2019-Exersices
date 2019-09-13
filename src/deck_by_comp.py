@@ -12,7 +12,7 @@ def deck_loop():
 
 def deck_comp():
     deck = [(suit, val) for suit in SUITS for val in VALUES]
-    pass
+    return deck
 
 
 if __name__ == '__main__':
