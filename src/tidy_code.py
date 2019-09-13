@@ -1,7 +1,7 @@
 from random import randint as a
 
 __author__ = 'Jørgen Kongsro'
-__email__ = 'jorjoh@nmbu.no'
+__email__ = "jorjoh@nmbu.no"
 
 
 def b():
@@ -10,11 +10,14 @@ def b():
         c = int(input('Your guess: '))
     return c
 
+
 def d():
     return a(1, 6) + a(1, 6)
 
+
 def e(f, g):
     return f == g
+
 
 if __name__ == '__main__':
 

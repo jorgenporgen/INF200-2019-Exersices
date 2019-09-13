@@ -1,5 +1,13 @@
 def letter_freq(txt):
-    pass
+    # using dict.get() to get count
+    # of each element in string
+    frequencies = {}
+
+    for keys in txt:
+        frequencies[keys] = frequencies.get(keys, 0) + 1
+
+    return frequencies
+
 
 if __name__ == '__main__':
     text = input('Please enter text to analyse: ')
