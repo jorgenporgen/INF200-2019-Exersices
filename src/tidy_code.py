@@ -20,7 +20,8 @@ def e(f, g):
 
 
 if __name__ == '__main__':
-
+    print('This is a guess game. Have fun and guess a number between 0 and 9'
+          'You can guess 3 times, and the number of points will be based on the number of guesses')
     h = False
     i = 3
     j = d()

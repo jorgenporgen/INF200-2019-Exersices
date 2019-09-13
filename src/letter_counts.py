@@ -1,12 +1,12 @@
 def letter_freq(txt):
-    # using dict.get() to get count
+    # using dictonary approach to get count
     # of each element in string
-    frequencies = {}
+    freqs = {}
 
     for keys in txt:
-        frequencies[keys] = frequencies.get(keys, 0) + 1
+        freqs[keys] = freqs.get(keys, 0) + 1
 
-    return frequencies
+    return freqs
 
 
 if __name__ == '__main__':
