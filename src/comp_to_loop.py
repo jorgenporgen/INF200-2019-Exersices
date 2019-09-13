@@ -9,3 +9,9 @@ def squares_by_loop(n):
             k ** 2
         k.append(n)
     return k
+
+
+if __name__ == '__main__':
+    n=2
+    if squares_by_comp(n) != squares_by_loop(n):
+        print('ERROR!')
