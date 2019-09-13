@@ -3,15 +3,14 @@ def squares_by_comp(n):
 
 
 def squares_by_loop(n):
-    k = []
+    deck = []
     for k in range(n):
         if k % 3 == 1:
-            k ** 2
-        k.append(n)
-    return k
+            deck.append(k ** 2)
+    return deck
 
 
 if __name__ == '__main__':
-    n=2
+    n = 2
     if squares_by_comp(n) != squares_by_loop(n):
         print('ERROR!')
