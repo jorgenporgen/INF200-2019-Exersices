@@ -1,52 +1,57 @@
+# -*- coding: utf-8 -*-
+"""
+This is a guess game. Have fun and guess a number between 0 and 9
 
+Attributes:
+    guess_number (int) = guess a number bewtween 0 and 9
 
-from random import randint as a
+"""
+from random import randint as select_rand
 
 __author__ = 'Jørgen Kongsro'
 __email__ = "jorjoh@nmbu.no"
 
-class guess:
+
+def guess_number():
     """
-    Create a guessing game selecting a number between 0 and 9. 
-    You will have three attempts
-    
-    
+    Guess a number
+    Attributes:
+        number (int)
     """
-    def __init__(self, r):
-        self.c = c
-        self.f = f
-        self.g = g
+
+    number = 0
+    while number < 1:
+        number = int(input('Your guess: '))
+    return number
 
 
-    def inputguess(self):
-        guess_number = 0
-        while guess_number < 1:
-            guess_number = int(input('Your guess: '))
-        return guess_number
-    
-    
-    def d():
-        return a(1, 6) + a(1, 6)
-    
-    
-    def e(f, g):
-        return f == g
+def selected_number():
+    """
+    DOCSTRING
+    """
+    return select_rand(1, 6) + select_rand(1, 6)
+
+
+def equal_numbers(f, g):
+    """
+    DOCSTRING
+    """
+    return f == g
 
 
 if __name__ == '__main__':
-    print('This is a guess game. Have fun and guess a number between 0 and 9'
-          'You can guess 3 times, and the number of points will be based on the number of guesses')
     h = False
-    i = 3
-    j = d()
-    while not h and i > 0:
-        k = b()
+    ATTEMPTS = 3
+    j = selected_number()
+    while not h and ATTEMPTS > 0:
+        k = guess_number()
         h = e(j, k)
         if not h:
             print('Wrong, try again!')
-            i -= 1
+            ATTEMPTS -= 1
 
-    if i > 0:
-        print('You won {} points.'.format(i))
+    if ATTEMPTS > 0:
+        print('You won {} points.'.format(ATTEMPTS))
     else:
         print('You lost. Correct answer: {}.'.format(j))
+        
