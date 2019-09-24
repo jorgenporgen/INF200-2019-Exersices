@@ -1,9 +1,17 @@
+
+
 from random import randint as a
 
 __author__ = 'Jørgen Kongsro'
 __email__ = "jorjoh@nmbu.no"
 
 class guess:
+    """
+    Create a guessing game selecting a number between 0 and 9. 
+    You will have three attempts
+    
+    
+    """
     def __init__(self, r):
         self.c = c
         self.f = f
@@ -11,10 +19,10 @@ class guess:
 
 
     def inputguess(self):
-        c = 0
-        while c < 1:
-            c = int(input('Your guess: '))
-        return c
+        guess_number = 0
+        while guess_number < 1:
+            guess_number = int(input('Your guess: '))
+        return guess_number
     
     
     def d():
