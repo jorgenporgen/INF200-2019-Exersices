@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-This is a guess game. Have fun and guess a number between 0 and 9
+This is a guess game. Have fun and guess a number between 1 and 10.
+You will have 3 attempts. Number of points will be based on number of attempts.
 
 Attributes:
-    guess_number (int) = guess a number bewtween 0 and 9
+    guess_number (int) = guess a number bewtween 1 and 10
 
 """
 from random import randint as select_rand
@@ -25,33 +26,47 @@ def guess_number():
     return number
 
 
-def selected_number():
+def reference_number():
     """
-    DOCSTRING
+    Select a number from a random distribution between 1 and 10
+    Attributes:
+        number (int)
     """
-    return select_rand(1, 6) + select_rand(1, 6)
+    return select_rand(1, 10)
 
 
-def equal_numbers(f, g):
+def correspondence(number, reference_number):
     """
-    DOCSTRING
+    Check correspndence between guessed number and reference number
+    Attibutes:
+        number (int)
+        reference_number (int)
     """
-    return f == g
+    return number == reference_number
 
 
-if __name__ == '__main__':
-    h = False
-    ATTEMPTS = 3
-    j = selected_number()
-    while not h and ATTEMPTS > 0:
+def play_game():
+    """
+    Play a single game of guess number
+    Returns
+    -------
+    game_result: bool
+        True if the game resulted in a win and False otherwise.
+    """
+    game_result = False
+    attempts = 3
+    j = reference_number()
+    while not game_result and attempts > 0:
         k = guess_number()
-        h = e(j, k)
-        if not h:
+        game_result = correspondence(j, k)
+        if not game_result:
             print('Wrong, try again!')
-            ATTEMPTS -= 1
+            attempts -= 1
 
-    if ATTEMPTS > 0:
-        print('You won {} points.'.format(ATTEMPTS))
+    if attempts > 0:
+        print('You won {} points.'.format(attempts))
     else:
         print('You lost. Correct answer: {}.'.format(j))
-        
+
+
+play_game()
