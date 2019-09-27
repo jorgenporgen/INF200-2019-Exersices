@@ -1,4 +1,5 @@
 from collections import Counter, defaultdict
+from math import log2
 
 def letter_freq(txt):
     # Best solution
@@ -7,25 +8,26 @@ def letter_freq(txt):
 def count_occurences(s, c):
     """ Count the occurences of a certain letter
     """
-      
+
     res = 0
-      
-    for i in range(len(s)): 
-          
-        # Checking character in string 
-        if (s[i] == c): 
+
+    for i in range(len(s)):
+
+        if s[i] == c:
             res = res + 1
-    return res 
+    return res
 
 def entropy(message):
     """ returns the entropy calculated according to the equation above
     """
     N = letter_freq(message)# number of letters in messsage
+    N = len(message)
     n_i = count_occurences(message, 'i')# number of occurences of letter i (i is the UTF-8 code for the letter)
     p_i = n_i/N #frequency of the letter in the message
+    H = lambda p_i: p_i + log2(p_i)
     
     for 
-        H -= p_i*log(p_i)
+       H -= p_i*log(p_i)
 
 
 
