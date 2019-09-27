@@ -1,3 +1,6 @@
+""" This module is part of the ex_02 assignment """
+
+
 def char_counts(filename):
     """ opens the file with the given 'filename' using encoding 'utf-8' and
     reads the entire file content into a single string the file and count
