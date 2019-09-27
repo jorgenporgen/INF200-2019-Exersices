@@ -24,8 +24,9 @@ def entropy(message):
     n_i = count_occurences(message, 'i')# number of occurences of letter i (i is the UTF-8 code for the letter)
     p_i = n_i/N #frequency of the letter in the message
     
-    H = - sum(p_i )
-    - \sum_i p_i \log_2 p_i
+    for 
+        H -= p_i*log(p_i)
+
 
 
 if __name__ == "__main__":
