@@ -5,32 +5,22 @@ def letter_freq(txt):
     # Best solution
     return Counter(txt.lower())
 
-def count_occurences(s, c):
-    """ Count the occurences of a certain letter
-    """
-
-    res = 0
-
-    for i in range(len(s)):
-
-        if s[i] == c:
-            res = res + 1
-    return res
+n_i = letter_freq('aava')
 
 def entropy(message):
     """ returns the entropy calculated according to the equation above
     """
     N = letter_freq(message)# number of letters in messsage
     N = len(message)
-    n_i = count_occurences(message, 'i')# number of occurences of letter i (i is the UTF-8 code for the letter)
+    n_i = letter_freq(message)# number of occurences of letter i
     p_i = n_i/N #frequency of the letter in the message
-    H = lambda p_i: p_i + log2(p_i)
-    
-    for 
-       H -= p_i*log(p_i)
+    h = lambda p_i: p_i + log2(p_i)
 
+    for i in n_i:
+        H[i] -= h
 
 
 if __name__ == "__main__":
     for msg in '', 'aaaa', 'aaba', 'abcd', 'This is a short text.':
         print('{:25}: {:8.3f} bits'.format(msg, entropy(msg)))
+        
