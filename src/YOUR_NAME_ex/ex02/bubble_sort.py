@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 27 08:33:28 2019
+def bubble_sort(data):
+    a=sorted(data)
+    return a
 
-@author: jorgenkongsro
-"""
 
+if __name__ == "__main__":
+    for data in ((),(1,),(1, 3, 8, 12),(12, 8, 3, 1),(8, 3, 12, 1)):
+        print('{!s:>15} --> {!s:>15}'.format(data, bubble_sort(data)))

@@ -1,6 +1,3 @@
-""" file_stats
-"""
-
 def char_counts(filename):
     """ opens the file with the given 'filename' using encoding 'utf-8' and 
     reads the entire file content into a single string the file and count 
@@ -10,10 +7,13 @@ def char_counts(filename):
     -------
     result: list or tuple
     """
-    string = open(filename, encoding='utf8').read()
-    result[i] = [ord(string) for i in filename]
+    check_string = open(filename, encoding='utf8').read()
+    result = [0] * 256
+    for ch in check_string:
+        i = ord(ch)    
+        result[i] += 1
 
-    return
+    return result
 
 if __name__ == '__main__':
     filename = 'file_stats.py'
