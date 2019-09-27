@@ -1,12 +1,18 @@
+""" file_stats
+"""
 
 def char_counts(filename):
-    """ Count how often each character code (0–255) occurs in the string
-    
+    """ opens the file with the given 'filename' using encoding 'utf-8' and 
+    reads the entire file content into a single string the file and count 
+    how often each character code (0–255) occurs in the string
+
     Returns
     -------
     result: list or tuple
     """
-    
+    string = open(filename, encoding='utf8').read()
+    result[i] = [ord(string) for i in filename]
+
     return
 
 if __name__ == '__main__':
@@ -19,5 +25,4 @@ if __name__ == '__main__':
                 character = chr(code)
                 print('{:3}{:>4}{:6}'.format(
                         code, character, frequencies[code]
-                        )
-    )
+                        ))
