@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 27 08:19:09 2019
 
-@author: jorgenkongsro
-"""
-def char_counts(textfilename):
-    """ function docstrin
+def char_counts(filename):
+    """ Count how often each character code (0–255) occurs in the string
+    
+    Returns
+    -------
+    result: list or tuple
     """
     
     return
