@@ -33,11 +33,17 @@ def test_median_for_even_numbers():
 
 
 def test_median_multiple_elements():
-    assert median([1])
+    data = {'#1':[1, 2, 3, 5, 8], '#2':[10, 40, 5, 90], '#3': [5.6, 3.8, 2.7, 2.4, 65.22, 0.224]}
+
+    for key in data:
+        multiple_data = median(data[key])
+        print('Running case ', [key])
+        assert multiple_data == median(data[key])
 
 
 def test_median_value_error_exeption():
     assert median([1])
+
 
 
 def test_median_leaves_orginial_unchanged():
@@ -50,4 +56,8 @@ def test_median_tuples_and_lists():
 
 if __name__ == "__main__":
     test_median_for_one_element_list()
+    test_median_for_odd_numbers()
+    test_median_for_even_numbers()
+    test_median_multiple_elements()
+    test_median_value_error_exeption()
     print("Everything passed")

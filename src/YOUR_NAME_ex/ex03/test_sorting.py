@@ -21,7 +21,12 @@ def bubble_sort(iterable):
 
 def test_empty():
     """Test that the sorting function works for empty list"""
-    assert bubble_sort([1])
+    data = []
+    if data == []:
+        raise ValueError('The list is empty')
+    #assert bubble_sort([data])
+    bubble_sort(data)
+
 
 
 def test_single():
