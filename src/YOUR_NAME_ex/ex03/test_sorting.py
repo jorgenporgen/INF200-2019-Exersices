@@ -26,13 +26,18 @@ if __name__ == "__main__":
 
 def test_empty():
     """Test that the sorting function works for empty list"""
-    assert bubble_sort() == []
+    assert bubble_sort([])
 
+
+test_empty()
 
 
 def test_single():
     """Test that the sorting function works for single-element list"""
-    assert bubble_sort() == [1]
+    assert bubble_sort([1])
+
+
+test_single()
 
 
 def test_sorted_is_not_original():
@@ -47,9 +52,13 @@ def test_sorted_is_not_original():
     Now sorted_data shall be a different object than data,
     not just another name for the same object.
     """
+
     data = [3, 2, 1]
     sorted_data = bubble_sort(data)
-    asssert data != sorted_data
+    assert data != sorted_data
+
+
+test_sorted_is_not_original()
 
 
 def test_original_unchanged():
@@ -63,12 +72,22 @@ def test_original_unchanged():
 
     Now data shall still contain [3, 2, 1].
     """
-    pass
+    data = [3, 2, 1]
+    sorted_data = bubble_sort(data)
+    assert data == data
+
+
+test_original_unchanged()
 
 
 def test_sort_sorted():
     """Test that sorting works on sorted data."""
-    pass
+    data = [3, 2, 1]
+    sorted_data = bubble_sort(data)
+    assert sorted_data == bubble_sort(data)
+
+
+test_sort_sorted()
 
 
 def test_sort_reversed():
