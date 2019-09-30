@@ -80,7 +80,9 @@ def test_sort_reversed():
 
 def test_sort_all_equal():
     """Test that sorting handles data with identical elements."""
-    pass
+    data5 = [1, 1, 1]
+    sorted_data = bubble_sort(data5)
+    assert len(set(sorted_data)) <= 1
 
 
 def test_sorting():
@@ -91,7 +93,12 @@ def test_sorting():
     ensure that they are sorted correctly. These could be lists of
     numbers of different length or lists of strings.
     """
-    pass
+    data = {'#1':[1, 2, 3, 5, 8], '#2':[10, 40, 5, 90], '#3': ['a', 'b', 'c', 'd'], '#4': [5.6, 3.8, 2.7, 2.4, 65.22, 0.224]}
+
+    for key in data:
+        sorted_data = bubble_sort(data[key])
+        print('Running case ', [key])
+        assert sorted_data == bubble_sort(data[key])
 
 
 if __name__ == "__main__":
