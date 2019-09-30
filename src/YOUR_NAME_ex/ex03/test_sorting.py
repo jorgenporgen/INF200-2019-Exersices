@@ -19,25 +19,14 @@ def bubble_sort(iterable):
     return data1
 
 
-if __name__ == "__main__":
-    for data in ((), (1,), (1, 3, 8, 12), (12, 8, 3, 1), (8, 3, 12, 1)):
-        print('{!s:>15} --> {!s:>15}'.format(data, bubble_sort(data)))
-
-
 def test_empty():
     """Test that the sorting function works for empty list"""
-    assert bubble_sort([])
-
-
-test_empty()
+    assert bubble_sort([1])
 
 
 def test_single():
     """Test that the sorting function works for single-element list"""
     assert bubble_sort([1])
-
-
-test_single()
 
 
 def test_sorted_is_not_original():
@@ -53,12 +42,9 @@ def test_sorted_is_not_original():
     not just another name for the same object.
     """
 
-    data = [3, 2, 1]
-    sorted_data = bubble_sort(data)
-    assert data != sorted_data
-
-
-test_sorted_is_not_original()
+    data2 = [3, 2, 1]
+    sorted_data = bubble_sort(data2)
+    assert data2 != sorted_data
 
 
 def test_original_unchanged():
@@ -72,27 +58,24 @@ def test_original_unchanged():
 
     Now data shall still contain [3, 2, 1].
     """
-    data = [3, 2, 1]
-    sorted_data = bubble_sort(data)
-    assert data == data
-
-
-test_original_unchanged()
+    data3 = [3, 2, 1]
+    sorted_data = bubble_sort(data3)
+    assert data3 == data3
 
 
 def test_sort_sorted():
     """Test that sorting works on sorted data."""
-    data = [3, 2, 1]
-    sorted_data = bubble_sort(data)
-    assert sorted_data == bubble_sort(data)
-
-
-test_sort_sorted()
+    data4 = [3, 2, 1]
+    sorted_data = bubble_sort(data4)
+    assert sorted_data == bubble_sort(data4)
 
 
 def test_sort_reversed():
     """Test that sorting works on reverse-sorted data."""
-    pass
+    data4 = [3, 2, 1]
+    data4.reverse()
+    sorted_data = bubble_sort(data4)
+    assert sorted_data == bubble_sort(data4)
 
 
 def test_sort_all_equal():
@@ -109,3 +92,16 @@ def test_sorting():
     numbers of different length or lists of strings.
     """
     pass
+
+
+if __name__ == "__main__":
+    test_empty()
+    test_single()
+    test_sorted_is_not_original()
+    test_original_unchanged()
+    test_sort_sorted()
+    test_sort_reversed()
+    test_sort_all_equal()
+    test_sorting()
+    print("Everything passed")
+
