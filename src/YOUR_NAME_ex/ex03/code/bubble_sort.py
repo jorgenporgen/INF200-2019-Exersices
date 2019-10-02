@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Jørgen Kongsro'
-__email__ = 'jorgen.kongsro@nmbu.no'
+__author__ = "Jørgen Kongsro"
+__email__ = "jorgen.kongsro@nmbu.no"
 
 
 def bubble_sort(iterable):

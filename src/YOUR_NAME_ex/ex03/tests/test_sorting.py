@@ -1,20 +1,13 @@
-import pytest
 from code import bubble_sort
 
 
 def test_empty():
     """Test that the sorting function works for empty list"""
     data = []
-    if data == []:
-        raise ValueError('The list is empty')
-    #assert bubble_sort([data])
-    bubble_sort(data)
-
-
-def test_median_raises_value_error_on_empty_list():
-    with pytest.raises(ValueError):
-        median([])
-
+    if not data:
+        raise ValueError("The list is empty")
+    else:
+        assert bubble_sort([data])
 
 
 def test_single():
@@ -53,7 +46,7 @@ def test_original_unchanged():
     """
     data3 = [3, 2, 1]
     sorted_data = bubble_sort(data3)
-    assert data3 == data3
+    assert sorted_data == data3
 
 
 def test_sort_sorted():
@@ -86,22 +79,25 @@ def test_sorting():
     ensure that they are sorted correctly. These could be lists of
     numbers of different length or lists of strings.
     """
-    data = {'#1':[1, 2, 3, 5, 8], '#2':[10, 40, 5, 90], '#3': ['a', 'b', 'c', 'd'], '#4': [5.6, 3.8, 2.7, 2.4, 65.22, 0.224]}
+    data = {
+        "#1": [1, 2, 3, 5, 8],
+        "#2": [10, 40, 5, 90],
+        "#3": ["a", "b", "c", "d"],
+        "#4": [5.6, 3.8, 2.7, 2.4, 65.22, 0.224],
+    }
 
     for key in data:
         sorted_data = bubble_sort(data[key])
-        print('Running case ', [key])
         assert sorted_data == bubble_sort(data[key])
 
 
-if __name__ == "__main__":
-    test_empty()
-    test_single()
-    test_sorted_is_not_original()
-    test_original_unchanged()
-    test_sort_sorted()
-    test_sort_reversed()
-    test_sort_all_equal()
-    test_sorting()
-    print("Everything passed")
-
+# if __name__ == "__main__":
+#    test_empty()
+#    test_single()
+#    test_sorted_is_not_original()
+#    test_original_unchanged()
+#    test_sort_sorted()
+#    test_sort_reversed()
+#    test_sort_all_equal()
+#    test_sorting()
+#    print("Everything passed")
