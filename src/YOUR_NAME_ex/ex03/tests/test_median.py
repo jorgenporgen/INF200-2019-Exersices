@@ -25,20 +25,17 @@ def test_median_multiple_elements():
 
     for key in data:
         multiple_data = median(data[key])
-        print("Running case ", [key])
         assert multiple_data == median(data[key])
 
 
 def test_median_raises_value_error_on_empty_list():
-    with pytest.raises(ValueError) as e:
+    with pytest.raises(ValueError):
         median([])
-
-    assert str(e.value) == 'Cannot calculate median of empty list'
 
 
 def test_median_leaves_original_unchanged():
     data3 = [3, 2, 1]
-    m1 = median(data3)
+    _m1 = median(data3)
     assert data3 == data3
 
 
@@ -51,5 +48,3 @@ def test_median_tuples_and_lists():
     for key in data:
         sorted_data = median(data[key])
         assert sorted_data == median(data[key])
-
-

@@ -42,7 +42,7 @@ def test_original_unchanged():
     Now data shall still contain [3, 2, 1].
     """
     data3 = [3, 2, 1]
-    sorted_data = bubble_sort(data3)
+    _sorted_data = bubble_sort(data3)
     assert data3 == data3
 
 
