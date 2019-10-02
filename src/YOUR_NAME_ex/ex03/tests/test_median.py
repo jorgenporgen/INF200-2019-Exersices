@@ -30,24 +30,26 @@ def test_median_multiple_elements():
 
 
 def test_median_raises_value_error_on_empty_list():
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError) as e:
         median([])
 
+    assert str(e.value) == 'Cannot calculate median of empty list'
 
-def test_median_leaves_orginial_unchanged():
-    assert median([1])
+
+def test_median_leaves_original_unchanged():
+    data3 = [3, 2, 1]
+    m1 = median(data3)
+    assert data3 == data3
 
 
 def test_median_tuples_and_lists():
-    assert median([1])
+    data = {
+        "tuples": (1, 2, 3, 5, 8),
+        "lists": [10, 40, 5, 90],
+    }
+
+    for key in data:
+        sorted_data = median(data[key])
+        assert sorted_data == median(data[key])
 
 
-# if __name__ == "__main__":
-#    test_median_for_one_element_list()
-#    test_median_for_odd_numbers()
-#    test_median_for_even_numbers()
-#    test_median_multiple_elements()
-#    test_median_raise_value_error_exeption()
-#    test_median_leaves_orginial_unchanged()
-#    test_median_tuples_and_lists()
-#    print("Everything passed")

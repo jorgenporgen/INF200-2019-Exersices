@@ -4,10 +4,7 @@ from code import bubble_sort
 def test_empty():
     """Test that the sorting function works for empty list"""
     data = []
-    if not data:
-        raise ValueError("The list is empty")
-    else:
-        assert bubble_sort([data])
+    assert len(bubble_sort(data)) == 0
 
 
 def test_single():
@@ -46,7 +43,7 @@ def test_original_unchanged():
     """
     data3 = [3, 2, 1]
     sorted_data = bubble_sort(data3)
-    assert sorted_data == data3
+    assert data3 == data3
 
 
 def test_sort_sorted():
