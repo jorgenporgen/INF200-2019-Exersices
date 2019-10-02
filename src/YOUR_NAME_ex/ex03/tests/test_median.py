@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-
-__author__ = 'Jørgen Kongsro'
-__email__ = 'jorgen.kongsro@nmbu.no'
-
-import
+import pytest
+from code import median
 
 def test_median_for_one_element_list():
     assert median([1])
@@ -30,7 +26,6 @@ def test_median_multiple_elements():
 
 def test_median_value_error_exeption():
     assert median([1])
-
 
 
 def test_median_leaves_orginial_unchanged():

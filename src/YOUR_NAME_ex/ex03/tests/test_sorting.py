@@ -1,22 +1,5 @@
-# -*- coding: utf-8 -*-
-
-__author__ = 'Jørgen Kongsro'
-__email__ = 'jorgen.kongsro@nmbu.no'
-
-
-def bubble_sort(iterable):
-    """ Bubble sort is a simple sorting algorithm
-    Returns
-    -------
-    data : list
-    """
-    data1 = list(iterable)
-    sorting_length = len(data1) - 1
-    for i in range(sorting_length):
-        for j in range(sorting_length - i):
-            if data1[j] > data1[j + 1]:
-                data1[j], data1[j + 1] = data1[j + 1], data1[j]
-    return data1
+import pytest
+from code import bubble_sort
 
 
 def test_empty():
@@ -27,9 +10,10 @@ def test_empty():
     #assert bubble_sort([data])
     bubble_sort(data)
 
+
 def test_median_raises_value_error_on_empty_list():
     with pytest.raises(ValueError):
-        median.median([])
+        median([])
 
 
 
