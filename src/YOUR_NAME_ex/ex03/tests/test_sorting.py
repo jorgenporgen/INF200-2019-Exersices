@@ -27,6 +27,10 @@ def test_empty():
     #assert bubble_sort([data])
     bubble_sort(data)
 
+def test_median_raises_value_error_on_empty_list():
+    with pytest.raises(ValueError):
+        median.median([])
+
 
 
 def test_single():
