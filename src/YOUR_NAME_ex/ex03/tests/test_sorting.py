@@ -86,15 +86,3 @@ def test_sorting():
     for key in data:
         sorted_data = bubble_sort(data[key])
         assert sorted_data == bubble_sort(data[key])
-
-
-# if __name__ == "__main__":
-#    test_empty()
-#    test_single()
-#    test_sorted_is_not_original()
-#    test_original_unchanged()
-#    test_sort_sorted()
-#    test_sort_reversed()
-#    test_sort_all_equal()
-#    test_sorting()
-#    print("Everything passed")
