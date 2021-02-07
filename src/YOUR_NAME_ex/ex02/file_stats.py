@@ -1,15 +1,24 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep 27 08:19:09 2019
+""" This module is part of the ex_02 assignment """
 
-@author: jorgenkongsro
-"""
-def char_counts(textfilename):
-    """ function docstrin
+
+def char_counts(filename):
+    """ opens the file with the given 'filename' using encoding 'utf-8' and
+    reads the entire file content into a single string the file and count
+    how often each character code (0–255) occurs in the string
+
+    Returns
+    -------
+    result: list or tuple
     """
-    
-    return
+    check_string = open(filename, encoding='utf8').read()
+    result = [0] * 256
+    for character in check_string:
+        if ord(character) > 256:
+            continue
+        i = ord(character)
+        result[i] += 1
+
+    return result
 
 if __name__ == '__main__':
     filename = 'file_stats.py'
@@ -19,7 +28,4 @@ if __name__ == '__main__':
             character = ''
             if code >= 32:
                 character = chr(code)
-                print('{:3}{:>4}{:6}'.format(
-                        code, character, frequencies[code]
-                        )
-    )
+                print('{:3}{:>4}{:6}'.format(code, character, frequencies[code]))
